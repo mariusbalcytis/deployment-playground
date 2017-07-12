@@ -57,3 +57,7 @@ No symlinks anywhere - whee!
 Problems with OpCache:
 
 [http://localhost:8081/opcache.php](http://localhost:8081/opcache.php)
+
+Use cachetool to reset OpCache:
+[http://gordalina.github.io/cachetool/](http://gordalina.github.io/cachetool/)
+
