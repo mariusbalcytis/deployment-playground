@@ -19,7 +19,7 @@ ssh root@localhost -p 2222
 
 Open `tester/index.html` for testing.
 
-Nginx + php-fpm:
+### Nginx + php-fpm
 
 ```bash
 cd deployer
@@ -31,3 +31,15 @@ php deployer.phar deploy -vvv nginx
 Not using restart: redeploy - main script is old, included one - new.
 
 Using restart: release is changed, but errors on deployment
+
+### Apache:
+
+```bash
+cd deployer
+php deployer.phar deploy -vvv apache
+```
+
+[http://localhost:8083/app.php](http://localhost:8083/app.php)
+
+Inconsistencies when deploying for small amount of time.
+

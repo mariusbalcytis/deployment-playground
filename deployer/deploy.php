@@ -11,12 +11,27 @@ host('localhost/nginx')
     ->set('deploy_path', '/var/www')
     ->addSshOption('StrictHostKeyChecking', 'no');
 
+host('localhost/apache')
+    ->stage('apache')
+    ->user('root')
+    ->port(2223)
+    ->set('deploy_path', '/var/www')
+    ->addSshOption('StrictHostKeyChecking', 'no');
+
 desc('Restart PHP-FPM service');
 task('php-fpm:restart', function () {
     run('pkill -o -USR2 php-fpm');
 })->onStage('nginx');
 after('deploy:symlink', 'php-fpm:restart');
 after('rollback', 'php-fpm:restart');
+
+
+desc('Restart Apache service');
+task('apache:restart', function () {
+    run('apachectl -k graceful');
+})->onStage('apache');
+after('deploy:symlink', 'apache:restart');
+after('rollback', 'apache:restart');
 
 desc('Deploy your project');
 task('deploy', [
