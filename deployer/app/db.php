@@ -5,7 +5,7 @@ $pdo = new PDO('mysql:host=mysql;dbname=app;charset=utf8', 'root', 'pass', [
 ]);
 
 $pdo->exec('
-  INSERT INTO transfers (money, amount, currency) VALUES ("1 EUR", 1, "EUR")
+  INSERT INTO transfers (amount, currency) VALUES (1, "EUR")
 ');
 $id = $pdo->lastInsertId();
 
@@ -15,12 +15,7 @@ $transfers = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 $sum = 0;
 foreach ($transfers as $transfer) {
-    if (isset($transfer['amount'])) {
-        $amount = $transfer['amount'];
-    } else {
-        list($amount, $currency) = explode(' ', $transfer['money']);
-    }
-    $sum += $amount;
+    $sum += $transfer['amount'];
 }
 
 header('Content-Type: application/json');

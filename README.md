@@ -103,3 +103,11 @@ First deployment:
 This handles previous release and possible rollback.
 3. Support both new and old columns - this will be needed later.
 
+Second deployment:
+
+1. Make old column nullable.
+2. Migrate data from old to new columns.
+3. Only use new columns in code - both for inserting and returning.
+As we've got step No. 3 covered in previous deployment, it's OK
+to rollback at this state.
+
