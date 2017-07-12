@@ -1,0 +1,51 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "5a43676b2d20d29bc6b410af0a69dd42",
+    "packages": [
+        {
+            "name": "rlerdorf/opcache-status",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rlerdorf/opcache-status.git",
+                "reference": "4867346722d664f16498ace4ecbb3c59bb3a3525"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rlerdorf/opcache-status/zipball/4867346722d664f16498ace4ecbb3c59bb3a3525",
+                "reference": "4867346722d664f16498ace4ecbb3c59bb3a3525",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "PHP-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "The contributors",
+                    "homepage": "https://github.com/rlerdorf/opcache-status/graphs/contributors"
+                }
+            ],
+            "description": "A one-page opcache status page",
+            "time": "2015-03-12 04:42:22"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "rlerdorf/opcache-status": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

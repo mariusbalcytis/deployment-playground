@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Deployment testing</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Load tester</h1>
+        <div class="panel panel-primary"
+             data-use-case=":8080/app.php"
+             data-compare="__DIR__"
+             data-compare-with="included __DIR__"
+        >
+            <div class="panel-heading">
+                <h3 class="panel-title">nginx + php-fpm</h3>
+            </div>
+        </div>
+
+        <div class="panel-body hidden body-template">
+            <div class="btn-group">
+                <button type="button" class="btn btn-success play"><span class="glyphicon glyphicon-play"></span> Start</button>
+                <button type="button" class="btn btn-danger stop"><span class="glyphicon glyphicon-stop"></span> Stop</button>
+                <button type="button" class="btn btn-default reset"><span class="glyphicon glyphicon-trash"></span> Reset</button>
+            </div>
+            <span class="text-success">Succeeded: <span class="badge counter-success">0</span></span>
+            <span class="text-danger">Failed: <span class="badge counter-failure">0</span></span>
+            <span class="text-warning">Inconsistent: <span class="badge counter-inconsistent">0</span></span>
+            <div class="log"></div>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+version: '2'
+services:
+    nginx:
+        build:
+            context: nginx
+        links:
+            - php
+        ports:
+            - '8080:80'
+            - '8081:81'
+        volumes:
+            - 'www:/var/www'
+    php:
+        build:
+            context: php7
+        links:
+            - mysql
+        ports:
+            - '2222:22'
+        volumes:
+            - 'www:/var/www'
+    apache:
+        build:
+            context: apache
+        links:
+            - mysql
+        ports:
+            - '8083:80'
+            - '2223:22'
+        volumes:
+            - 'www:/var/www'
+    mysql:
+        build:
+            context: mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: pass
+            MYSQL_DATABASE: app
+volumes:
+    www: ~
