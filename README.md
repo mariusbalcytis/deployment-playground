@@ -70,3 +70,13 @@ Cache needs to be cleared manually if not restarting php-fpm.
 Either way, simple restart on running system is not enough.
 
 Cache keys must include current release / version number.
+
+### Database
+
+Let's take a case: we have table where one column represents money in
+this format: `### ABC`, where `###` is amount and `ABC` is currency.
+
+We'll try to change this structure into two columns: `###` and `ABC`. 
+
+[http://localhost:8081/db.php](http://localhost:8081/db.php)
+
