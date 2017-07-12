@@ -2,7 +2,7 @@
 
 usleep(300E3);
 
-$key = 'key';
+$key = 'key' . __DIR__;
 
 $result = apcu_fetch($key);
 if (!$result) {
