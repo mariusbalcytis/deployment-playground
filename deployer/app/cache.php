@@ -1,5 +1,7 @@
 <?php
 
+usleep(300E3);
+
 $key = 'key';
 
 $result = apcu_fetch($key);

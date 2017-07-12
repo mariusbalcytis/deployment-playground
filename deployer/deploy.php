@@ -20,6 +20,7 @@ host('localhost/apache')
 
 desc('Restart PHP-FPM service');
 task('php-fpm:restart', function () {
+    run('cachetool apcu:cache:clear');
     run('cachetool opcache:reset');
 })->onStage('nginx');
 after('deploy:symlink', 'php-fpm:restart');
