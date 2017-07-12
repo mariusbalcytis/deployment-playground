@@ -80,3 +80,17 @@ We'll try to change this structure into two columns: `###` and `ABC`.
 
 [http://localhost:8081/db.php](http://localhost:8081/db.php)
 
+Migrations are run on deployment, before changing to the new code.
+
+Let's run Load tester on DB. Then:
+
+```bash
+php deployer.phar deploy -vvv nginx
+# errors should be visible
+php deployer.phar rollback -vvv nginx
+# ouch!
+
+# to reset test, from env/:
+./reset-db.sh
+```
+

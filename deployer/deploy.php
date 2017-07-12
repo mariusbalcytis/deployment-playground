@@ -62,3 +62,8 @@ task('copy', function() {
 
     runLocally("scp -r -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -q$port$identityFile $src/* '$user$host:{{release_path}}/'");
 });
+
+task('migrate', function() {
+    run('[ -f "{{release_path}}/migrate.php" ] && php "{{release_path}}/migrate.php" || echo "no migrations"');
+});
+before('deploy:symlink', 'migrate');
