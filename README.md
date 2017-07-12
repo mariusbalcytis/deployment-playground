@@ -111,3 +111,7 @@ Second deployment:
 As we've got step No. 3 covered in previous deployment, it's OK
 to rollback at this state.
 
+Third deployment:
+
+1. Remove old column.
+2. Make new columns non nullable (could be in previous step).
