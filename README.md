@@ -94,3 +94,12 @@ php deployer.phar rollback -vvv nginx
 ./reset-db.sh
 ```
 
+#### How to handle migrations
+
+First deployment:
+
+1. Add new columns, do not remove old ones.
+2. Always insert both old and new values.
+This handles previous release and possible rollback.
+3. Support both new and old columns - this will be needed later.
+
