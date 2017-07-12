@@ -61,3 +61,12 @@ Problems with OpCache:
 Use cachetool to reset OpCache:
 [http://gordalina.github.io/cachetool/](http://gordalina.github.io/cachetool/)
 
+### Cache
+
+[http://localhost:8081/cache.php](http://localhost:8081/cache.php)
+
+Cache needs to be cleared manually if not restarting php-fpm.
+
+Either way, simple restart on running system is not enough.
+
+Cache keys must include current release / version number.
