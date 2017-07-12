@@ -43,3 +43,17 @@ php deployer.phar deploy -vvv apache
 
 Inconsistencies when deploying for small amount of time.
 
+### Nginx + php-fpm + realpath_root
+
+```bash
+cd deployer
+php deployer.phar deploy -vvv nginx
+```
+
+[http://localhost:8081/app.php](http://localhost:8081/app.php)
+
+No symlinks anywhere - whee!
+
+Problems with OpCache:
+
+[http://localhost:8081/opcache.php](http://localhost:8081/opcache.php)
