@@ -1,6 +1,12 @@
-# Deployment sandbox
+# Deployment playground
 
-Setup:
+## How to see the progress
+
+If you want to see how things added up - run through commits from the first one.
+
+This is especially important for DB migrations part, as same file was changed several times.
+
+## Setup
 
 ```bash
 cd deployer
